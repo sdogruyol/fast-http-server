@@ -4,23 +4,23 @@ Super fast, zero configuration command line HTTP Server.
 
 ## Installation
 
-
-TODO: Write installation instructions here
-
+```
+git clone https://github.com/sdogruyol/fast-http-server
+crystal build --release src/fast-http-server.cr
+mv fast-http-server /usr/local/bin/fast-http-server
+```
 
 ## Usage
 
+Zero configuration.
 
+`fast-http-server`
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+By default fast-http-server listens port 3000. Go to `localhost:3000`.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/fast-http-server/fork )
+1. Fork it ( https://github.com/sdogruyol/fast-http-server/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -28,4 +28,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Serdar Dogruyol - creator, maintainer
+- [sdogruyol](https://github.com/sdogruyol) Serdar Dogruyol - creator, maintainer
