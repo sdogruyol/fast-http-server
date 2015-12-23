@@ -15,3 +15,4 @@ end
 fast_server = FastHttpServer.new "./"
 server = HTTP::Server.new("0.0.0.0", 3000, [fast_server])
 server.listen
+puts "fast-http-server started on port 3000."
