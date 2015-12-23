@@ -18,6 +18,10 @@ Zero configuration.
 
 By default fast-http-server listens port 3000. Go to `localhost:3000`.
 
+To listen on a different port you can start `fast-http-server` with `-p` `--port` option.
+
+`fast-http-server -p 5050`
+
 ## Contributing
 
 1. Fork it ( https://github.com/sdogruyol/fast-http-server/fork )
