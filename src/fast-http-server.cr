@@ -1,6 +1,15 @@
 require "http"
+require "option_parser"
 
 class FastHttpServer < HTTP::StaticFileHandler
+  INSTANCE = new
+  property port
+
+  def initialize(@publicdir = "./")
+    @port = 3000
+    super
+  end
+
   def call(request)
     if request.path.not_nil! == "/"
       if File.exists?(Dir.working_directory + "/index.html")
@@ -12,7 +21,15 @@ class FastHttpServer < HTTP::StaticFileHandler
   end
 end
 
-fast_server = FastHttpServer.new "./"
-server = HTTP::Server.new("0.0.0.0", 3000, [fast_server])
-server.listen
-puts "fast-http-server started on port 3000."
+at_exit do
+  OptionParser.parse! do |opts|
+    opts.on("-p ", "--port ", "port") do |port|
+      FastHttpServer::INSTANCE.port = port
+    end
+  end
+
+  fast_server = FastHttpServer::INSTANCE
+  server = HTTP::Server.new("0.0.0.0", fast_server.port, [fast_server])
+  puts "fast-http-server started on port #{fast_server.port}"
+  server.listen
+end
