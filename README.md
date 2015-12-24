@@ -4,6 +4,17 @@ Super fast, zero configuration command line HTTP Server.
 
 ## Installation
 
+### OS X
+
+You can install `fast-http-server` via Brew.
+
+```
+brew tap sdogruyol/fast-http-server
+brew install fast-http-server
+```
+
+### Manual
+
 ```
 git clone https://github.com/sdogruyol/fast-http-server
 crystal build --release src/fast-http-server.cr
