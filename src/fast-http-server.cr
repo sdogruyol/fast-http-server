@@ -12,7 +12,7 @@ class FastHttpServer < HTTP::StaticFileHandler
 
   def call(request)
     if request.path.not_nil! == "/"
-      index_path = Dir.working_directory + "/index.html"
+      index_path = Dir.current + "/index.html"
       if File.exists?(index_path)
         return HTTP::Response.new(200, File.read(index_path), HTTP::Headers{"Content-Type": mime_type(index_path)})
       end
