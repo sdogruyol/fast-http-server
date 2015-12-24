@@ -1,6 +1,6 @@
 # fast-http-server
 
-Super fast, zero configuration command line HTTP Server.
+Super fast, zero configuration command line HTTP Server written in Crystal programming language.  
 
 ## Installation
 
@@ -14,6 +14,8 @@ brew install fast-http-server
 ```
 
 ### Manual
+
+`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.10.10. You can install it [here](http://crystal-lang.org/docs/installation/index.html)
 
 ```
 git clone https://github.com/sdogruyol/fast-http-server
