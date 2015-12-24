@@ -2,6 +2,18 @@
 
 Super fast, zero configuration command line HTTP Server written in Crystal programming language.  
 
+## Usage
+
+Zero configuration.
+
+`fast-http-server`
+
+By default fast-http-server listens port 3000. Go to `localhost:3000`.
+
+To listen on a different port you can start `fast-http-server` with `-p` `--port` option.
+
+`fast-http-server -p 5050`
+
 ## Installation
 
 ### OS X
@@ -23,17 +35,6 @@ crystal build --release src/fast-http-server.cr
 mv fast-http-server /usr/local/bin/fast-http-server
 ```
 
-## Usage
-
-Zero configuration.
-
-`fast-http-server`
-
-By default fast-http-server listens port 3000. Go to `localhost:3000`.
-
-To listen on a different port you can start `fast-http-server` with `-p` `--port` option.
-
-`fast-http-server -p 5050`
 
 ## Contributing
 
