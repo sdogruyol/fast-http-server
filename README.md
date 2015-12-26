@@ -14,6 +14,17 @@ To listen on a different port you can start `fast-http-server` with `-p` `--port
 
 `fast-http-server -p 5050`
 
+# Fast
+
+Numbers speak louder than words.
+
+| Server | Request Per Second  | Avg. Response Time |
+| :------------ |:---------------:| -----:|
+| fast-http-server (***Crystal***)    | 16433.61 | 8.90ms  |
+| http-server (***Node.js***)     | 2105.55        |   47.92ms |
+| SimpleHTTPServer (***Python***) | 785.14     |  1.91ms |
+
+
 ## Installation
 
 ### OS X
