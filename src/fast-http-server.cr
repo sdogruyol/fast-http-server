@@ -29,7 +29,7 @@ at_exit do
   end
 
   fast_server = FastHttpServer::INSTANCE
-  server = HTTP::Server.new("0.0.0.0", fast_server.port, [fast_server])
+  server = HTTP::Server.new("0.0.0.0", fast_server.port, [HTTP::LogHandler.new, fast_server])
   puts "fast-http-server started on port #{fast_server.port}"
   server.listen
 end
