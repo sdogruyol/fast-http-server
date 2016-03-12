@@ -25,7 +25,7 @@ at_exit do
   OptionParser.parse! do |opts|
     opts.on("-p ", "--port ", "port") do |port|
       if port.to_s == "80"
-        puts "You may need to be root to run on 80 port"
+        puts "You may need root(sudo) access to run on 80 port"
       end
       FastHttpServer::INSTANCE.port = port
     end
