@@ -1,6 +1,6 @@
 # fast-http-server
 
-Super fast, zero configuration command line HTTP Server written in Crystal programming language.  
+Super fast, zero configuration command line HTTP Server written in Crystal programming language.
 
 ## Usage
 
@@ -20,7 +20,7 @@ Numbers speak louder than words.
 
 | Server | Request Per Second  | Avg. Response Time |
 | :------------ |:---------------:| -----:|
-| fast-http-server (***Crystal***)    | 16433.61 | 8.90ms  |
+| fast-http-server (***Crystal***)    | 18348.47 | 8.67ms  |
 | http-server (***Node.js***)     | 2105.55        |   47.92ms |
 | SimpleHTTPServer (***Python***) | 785.14     |  1.91ms |
 
