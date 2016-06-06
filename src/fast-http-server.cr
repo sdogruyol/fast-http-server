@@ -10,6 +10,14 @@ class FastHttpServer < HTTP::StaticFileHandler
     super
   end
 
+  def port=(value)
+    3000
+  end
+
+  def port
+    @port
+  end
+
   def call(context)
     if context.request.path.not_nil! == "/"
       index_path = Dir.current + "/index.html"
