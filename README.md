@@ -46,15 +46,3 @@ crystal build --release src/fast-http-server.cr
 mv fast-http-server /usr/local/bin/fast-http-server
 ```
 
-
-## Contributing
-
-1. Fork it ( https://github.com/sdogruyol/fast-http-server/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [sdogruyol](https://github.com/sdogruyol) Serdar Dogruyol - creator, maintainer
