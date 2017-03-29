@@ -14,7 +14,7 @@ class FastHttpServer < HTTP::StaticFileHandler
     if context.request.path.not_nil! == "/"
       index_path = Dir.current + "/index.html"
       if File.exists?(index_path)
-        return HTTP::Client::Response.new(200, File.read(index_path), HTTP::Headers{"Content-Type": mime_type(index_path)})
+        return HTTP::Client::Response.new(200, File.read(index_path), HTTP::Headers{"Content-Type"=> mime_type(index_path)})
       end
     end
     super
@@ -27,7 +27,7 @@ at_exit do
       if port.to_s == "80"
         puts "You may need root(sudo) access to run on 80 port"
       end
-      FastHttpServer::INSTANCE.port = port
+      FastHttpServer::INSTANCE.port = port.to_i
     end
   end
 
