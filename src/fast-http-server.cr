@@ -51,7 +51,7 @@ at_exit do
   fast_server = FastHttpServer.new directory
 
   ARGV.map_with_index{ |arg, i|
-    fast_server.port = ARGV[0].to_i?.nil? ? 8080 : ARGV[i].to_i
+    fast_server.port = ARGV[0].to_i?.nil? ? 3000 : ARGV[i].to_i
   } if ARGV.size >= 1
 
   server = HTTP::Server.new("0.0.0.0", fast_server.port, [HTTP::LogHandler.new, fast_server])
