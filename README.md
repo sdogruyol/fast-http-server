@@ -6,8 +6,8 @@ Super fast, zero configuration command line HTTP Server written in Crystal progr
 
 Zero configuration: `fast-http-server`  and your server's ready.
 
-```haskell
-usage: fast-http-server [-h] [-d DIR] [port] 
+```
+usage: fast-http-server [-h] [-d DIR] [port]
 
 positional arguments:
     port                             specify alternate port [default: 3000]
@@ -15,6 +15,7 @@ positional arguments:
 optional arguments:
     -h, --help                       show this help message and exit
     -d DIR, --directory DIR          specify a directory
+    -l LIST, --listdir LIST          enable/disable directory listing (true/false)
 ```
 
 By default fast-http-server listens port 3000. Go to `localhost:3000`.  
@@ -26,7 +27,6 @@ To choose a directory: `fast-http-server -d example_directory`
 
 
 # Fast
-<!--Really need to update the benchmark + add instructions on how to replicate-->
 Numbers speak louder than words.
 
 | Server | Request Per Second  | Avg. Response Time |
@@ -41,15 +41,14 @@ Numbers speak louder than words.
 
 You can install `fast-http-server` via Brew.
 
-<!--little trick to make the code pweetier-->
-```haskell
+```
 brew tap sdogruyol/fast-http-server
 brew install fast-http-server
 ```
 
 ### Manual
 
-`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.10.0. You can install it [here](http://crystal-lang.org/docs/installation/index.html)
+`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.22.0 You can install it [here](http://crystal-lang.org/docs/installation/index.html)
 
 ```haskell
 git clone https://github.com/sdogruyol/fast-http-server
