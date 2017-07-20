@@ -44,8 +44,8 @@ at_exit do
 
     parser.on("-h", "--help", "show this help message and exit") { puts parser; exit }
     parser.on("-d DIR", "--directory DIR", "specify a directory") { |dir| directory = dir }
-    parser.on("-l LIST", "--listdir LIST", "enable/disable directory listing (true/false)") do |k|
-      dir_listing = false if k.downcase[0] == 'f'
+    parser.on("-l LIST", "--listdir LIST", "enable/disable directory listing (yes/no)") do |k|
+      dir_listing = false if k.downcase[0] == 'n'
     end
 
     parser.invalid_option{ |opt| puts "Invalid option: #{opt}\n\n"; puts parser; exit }

@@ -15,7 +15,7 @@ positional arguments:
 optional arguments:
     -h, --help                       show this help message and exit
     -d DIR, --directory DIR          specify a directory
-    -l LIST, --listdir LIST          enable/disable directory listing (true/false)
+    -l LIST, --listdir LIST          enable/disable directory listing (yes/no)
 ```
 
 By default fast-http-server listens port 3000. Go to `localhost:3000`.  
