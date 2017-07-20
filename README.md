@@ -50,7 +50,7 @@ brew install fast-http-server
 
 `fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.22.0 You can install it [here](http://crystal-lang.org/docs/installation/index.html)
 
-```haskell
+```
 git clone https://github.com/sdogruyol/fast-http-server
 crystal build --release src/fast-http-server.cr
 mv fast-http-server /usr/local/bin/fast-http-server
