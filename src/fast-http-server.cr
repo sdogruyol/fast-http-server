@@ -12,11 +12,10 @@ class FastHttpServer < HTTP::StaticFileHandler
 
   def call(context)
     if context.request.path.not_nil!
-      url = context.request.path
-      index_path = @publicdir + url.lchop + "index.html"
-      
-      if File.exists? index_path
-        redirect_to context, index_path
+      indexed_url = "." + context.request.path + "index.html"
+
+      if File.exists? indexed_url
+        redirect_to context, "index.html"
         return
       end
     end
