@@ -4,18 +4,29 @@ Super fast, zero configuration command line HTTP Server written in Crystal progr
 
 ## Usage
 
-Zero configuration.
+Zero configuration: `fast-http-server`  and your server's ready.
 
-`fast-http-server`
+```
+usage: fast-http-server [-h] [-d DIR] [port]
 
-By default fast-http-server listens port 3000. Go to `localhost:3000`.
+positional arguments:
+    port                             specify alternate port [default: 3000]
 
-To listen on a different port you can start `fast-http-server` with `-p` `--port` option.
+optional arguments:
+    -h, --help                       show this help message and exit
+    -d DIR, --directory DIR          specify a directory
+    -l LIST, --listdir LIST          enable/disable directory listing (yes/no)
+```
 
-`fast-http-server -p 5050`
+By default fast-http-server listens port 3000. Go to `localhost:3000`.  
+
+To listen on a different port you can start `fast-http-server` with the desired port:  
+`fast-http-server 5050`  
+
+To choose a directory: `fast-http-server -d example_directory`
+
 
 # Fast
-
 Numbers speak louder than words.
 
 | Server | Request Per Second  | Avg. Response Time |
@@ -23,7 +34,6 @@ Numbers speak louder than words.
 | fast-http-server (***Crystal***)    | 18348.47 | 8.67ms  |
 | http-server (***Node.js***)     | 2105.55        |   47.92ms |
 | SimpleHTTPServer (***Python***) | 785.14     |  1.91ms |
-
 
 ## Installation
 
@@ -38,7 +48,7 @@ brew install fast-http-server
 
 ### Manual
 
-`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.10.0. You can install it [here](http://crystal-lang.org/docs/installation/index.html)
+`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.22.0 You can install it [here](http://crystal-lang.org/docs/installation/index.html)
 
 ```
 git clone https://github.com/sdogruyol/fast-http-server
@@ -46,3 +56,10 @@ crystal build --release src/fast-http-server.cr
 mv fast-http-server /usr/local/bin/fast-http-server
 ```
 
+### Protip
+
+For quick use, add
+```bash
+alias fhs='fast-http-server'
+```
+to your `.bashrc` | `.zshrc` | Profile file
