@@ -59,7 +59,8 @@ at_exit do
     fast_server.port = ARGV[0].to_i?.nil? ? 3000 : ARGV[i].to_i
   } if ARGV.size >= 1
 
-  server = HTTP::Server.new("0.0.0.0", fast_server.port, [HTTP::LogHandler.new, fast_server])
+  server = HTTP::Server.new([HTTP::LogHandler.new, fast_server])
+  server.bind_tcp "0.0.0.0", fast_server.port
   puts "fast-http-server started on port #{fast_server.port}" + (directory == "./" ? "" : " at #{directory}")
   
   server.listen
