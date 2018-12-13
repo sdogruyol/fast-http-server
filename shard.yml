@@ -1,6 +1,10 @@
 name: fast-http-server
 
-version: 0.5.0
+version: 0.6.0
+
+targets:
+  fast-http-server:
+    main: src/fast-http-server.cr
 
 authors:
   - Serdar Dogruyol <dogruyolserdar@gmail.com>

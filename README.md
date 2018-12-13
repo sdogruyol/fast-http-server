@@ -18,22 +18,33 @@ optional arguments:
     -l LIST, --listdir LIST          enable/disable directory listing (yes/no)
 ```
 
-By default fast-http-server listens port 3000. Go to `localhost:3000`.  
+By default fast-http-server listens port 3000. Go to `localhost:3000`.
 
-To listen on a different port you can start `fast-http-server` with the desired port:  
-`fast-http-server 5050`  
+To listen on a different port you can start `fast-http-server` with the desired port:
+`fast-http-server 5050`
 
 To choose a directory: `fast-http-server -d example_directory`
 
 
 # Fast
-Numbers speak louder than words.
 
-| Server | Request Per Second  | Avg. Response Time |
-| :------------ |:---------------:| -----:|
-| fast-http-server (***Crystal***)    | 18348.47 | 8.67ms  |
-| http-server (***Node.js***)     | 2105.55        |   47.92ms |
-| SimpleHTTPServer (***Python***) | 785.14     |  1.91ms |
+```
+$ wrk -c 100 -d 20 -t 4 --latency http://localhost:3000
+
+Running 20s test @ http://localhost:3000
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.98ms  615.13us  12.73ms   77.06%
+    Req/Sec     6.31k   347.48     7.05k    77.88%
+  Latency Distribution
+     50%    3.87ms
+     75%    4.27ms
+     90%    4.75ms
+     99%    5.86ms
+  502556 requests in 20.02s, 456.75MB read
+Requests/sec:  25102.60
+Transfer/sec:     22.81MB
+```
 
 ## Installation
 
