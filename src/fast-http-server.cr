@@ -38,7 +38,7 @@ optional arguments:
 BANNER
 
 at_exit do
-  OptionParser.parse! do |parser|
+  OptionParser.parse do |parser|
     parser.banner = BANNER
 
     parser.on("-h", "--help", "show this help message and exit") { puts parser; exit }
