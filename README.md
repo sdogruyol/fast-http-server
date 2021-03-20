@@ -59,7 +59,7 @@ brew install fast-http-server
 
 ### Manual
 
-`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 0.27.0 You can install it [here](http://crystal-lang.org/docs/installation/index.html)
+`fast-http-server` requires  [Crystal](http://crystal-lang.org/) 1.0.0 You can install it [here](https://crystal-lang.org/install/)
 
 ```
 git clone https://github.com/sdogruyol/fast-http-server
