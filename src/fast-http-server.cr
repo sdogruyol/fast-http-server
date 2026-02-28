@@ -11,11 +11,13 @@ class FastHttpServer < HTTP::StaticFileHandler
   end
 
   def call(context)
-    if context.request.path.not_nil!
-      indexed_url = "." + context.request.path + "index.html"
+    if path = context.request.path
+      base = path.lchop("/").chomp("/")
+      indexed_url = File.join(@publicdir, base, "index.html")
 
-      if File.exists? indexed_url
-        redirect_to context, "index.html"
+      if File.exists?(indexed_url)
+        redirect_path = path.chomp("/") + "/index.html"
+        redirect_to context, redirect_path
         return
       end
     end
@@ -37,7 +39,7 @@ positional arguments:
 optional arguments:
 BANNER
 
-at_exit do
+if ENV["ENV"]? != "test"
   OptionParser.parse do |parser|
     parser.banner = BANNER
 
@@ -55,13 +57,11 @@ at_exit do
 
   fast_server = FastHttpServer.new directory, dir_listing
 
-  ARGV.map_with_index{ |arg, i|
-    fast_server.port = ARGV[0].to_i?.nil? ? 3000 : ARGV[i].to_i
-  } if ARGV.size >= 1
+  fast_server.port = ARGV[0]?.try(&.to_i?) || 3000 if ARGV.size >= 1
 
   server = HTTP::Server.new([HTTP::LogHandler.new, fast_server])
   server.bind_tcp "0.0.0.0", fast_server.port
   puts "fast-http-server started on port #{fast_server.port}" + (directory == "./" ? "" : " at #{directory}")
-  
+
   server.listen
 end
