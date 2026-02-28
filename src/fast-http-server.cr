@@ -27,10 +27,10 @@ class FastHttpServer < HTTP::StaticFileHandler
 end
 
 # Defaults
-directory  = "./"
+directory = "./"
 dir_listing = true
 
-BANNER =  <<-BANNER
+BANNER = <<-BANNER
 usage: fast-http-server [-h] [-d DIR] [port] 
 
 positional arguments:
@@ -49,8 +49,8 @@ if ENV["ENV"]? != "test"
       dir_listing = false if k.downcase[0] == 'n'
     end
 
-    parser.invalid_option{ |opt| puts "Invalid option: #{opt}\n\n"; puts parser; exit }
-    parser.missing_option{ |opt| puts "Missing option for #{opt}\n\n"; puts parser; exit }
+    parser.invalid_option { |opt| puts "Invalid option: #{opt}\n\n"; puts parser; exit }
+    parser.missing_option { |opt| puts "Missing option for #{opt}\n\n"; puts parser; exit }
   end
 
   raise "Directory: '#{directory}' doesn't exist." unless Dir.exists?(directory)
