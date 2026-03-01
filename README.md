@@ -65,17 +65,6 @@ Transfer/sec:     22.81MB
 
 ## Installation
 
-### OS X
-
-You can install `fast-http-server` via Brew.
-
-```bash
-brew tap sdogruyol/fast-http-server
-brew install fast-http-server
-```
-
-### Manual
-
 `fast-http-server` requires [Crystal](https://crystal-lang.org/) 1.0.0+. Install it [here](https://crystal-lang.org/install/).
 
 ```bash
@@ -85,7 +74,7 @@ shards build --release
 mv bin/fast-http-server /usr/local/bin/fast-http-server
 ```
 
-### Protip
+**Protip**
 
 For quick use, add to your `.bashrc`, `.zshrc`, or profile file:
 
